@@ -1,27 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import state from './state.js'
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import state from "./state.js";
+import "./index.css";
 
-import App from './App';
+import App from "./App";
 
-
-let rerenderEntireTree = (props) => {  
+let rerenderEntireTree = (props) => {
   ReactDOM.render(
-      <React.StrictMode>
-        <App data={props}/>
-      </React.StrictMode>,
-      document.getElementById('root')
-    );
-}
+    <React.StrictMode>
+      <App data={props} />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+};
 
-state.refresh()
+state.refresh();
 
 setTimeout(() => {
-  rerenderEntireTree(state)
+  rerenderEntireTree(state);
 }, 1000);
 
 setInterval(() => {
-  state.refresh()
+  state.refresh();
   rerenderEntireTree(state);
-}, 5000); 
+}, 5000);
